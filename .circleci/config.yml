@@ -13,7 +13,7 @@ jobs:
           name: print hello
           command: |
             export bool_value=<< parameters.bool_value >>
-            echo $bool_value
+            echo "bool_value is ${bool_value}"
 
 workflows:
   hello:
