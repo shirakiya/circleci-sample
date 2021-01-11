@@ -7,6 +7,8 @@ parameters:
 
 jobs:
   hello:
+    docker:
+      - image: circleci/buildpack-deps:latest
     steps:
       - run:
           name: print hello
