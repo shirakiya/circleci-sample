@@ -1,0 +1,20 @@
+version: 2.1
+
+parameters:
+  bool_value:
+    type: boolean
+    default: true
+
+jobs:
+  hello:
+    steps:
+      - run:
+          name: print hello
+          command: |
+            export bool_value=<< parameters.bool_value >>
+            echo $bool_value
+
+workflows:
+  hello:
+    jobs:
+      - hello
