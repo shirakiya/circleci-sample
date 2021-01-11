@@ -1,14 +1,13 @@
 version: 2.1
 
-parameters:
-  bool_value:
-    type: boolean
-    default: true
-
 jobs:
   hello:
     docker:
       - image: circleci/buildpack-deps:latest
+    parameters:
+      bool_value:
+        type: boolean
+        default: true
     steps:
       - run:
           name: print hello
